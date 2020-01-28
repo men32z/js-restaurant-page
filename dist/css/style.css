@@ -1,0 +1,18 @@
+.menu {
+  justify-content: flex-end;
+}
+.menu button {
+  background: none;
+  border: none;
+  padding: 15px;
+  color: white;
+  font-size: 26px;
+}
+.menu button:hover {
+  background-color: #ffffff50;
+}
+@media (max-width:768px) {
+  .menu button {
+    padding: 5px;
+  }
+}

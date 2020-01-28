@@ -1,5 +1,5 @@
 import home from './home';
+import header from './header';
 
-
-home();
-
+let container = document.querySelector('#content');
+header(container);
