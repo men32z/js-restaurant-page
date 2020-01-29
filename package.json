@@ -17,7 +17,13 @@
   },
   "homepage": "https://github.com/men32z/js-restaurant-page#readme",
   "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.20.0",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10"
+  },
+  "dependencies": {
+    "sweetalert2": "^9.7.1"
   }
 }
