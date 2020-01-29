@@ -1,24 +1,7 @@
 import {populate} from './helper';
-function home(){
+function home(cont){
   let items =
   [
-    [ "div.container-fluid bg-dark text-white py-3",
-      [
-        [ "div.container",
-          [
-            [ "div.row",
-              [
-                [ "div.col-sm-12",
-                  [
-                    [ "h1.#title"]
-                  ]
-                ]
-              ]
-            ]
-          ]
-        ]
-      ]
-    ],
     ["div.container-fluid", [
       [
         "div.row",
@@ -49,12 +32,8 @@ function home(){
   " cream, and vegetables, such as lettuce, onion, tomatoes, and chiles. Tacos are a common form "+
   " of antojitos, or Mexican street food, which have spread around the world.";
 
-
-  let cont = document.querySelector('#content');
-
   populate(items, cont);
 
-  document.querySelector('#title').innerHTML = "The Restaurant";
   document.querySelector('#texts h2').innerHTML = "This is the best restaurant ever!";
   document.querySelector('#texts h3').innerHTML = "we serve the best tacos!";
   document.querySelector('#texts p').innerHTML = bigText;

@@ -1,42 +1,60 @@
-import {populate} from './helper';
-function home(cont){
+import {populate, el} from './helper';
+function menu(cont){
   let items =
   [
     ["div.container-fluid", [
       [
         "div.row",
         [
-            [ "div.col-12 col-md-6  py-3 my-3#texts",
-              [
-                ["h2"],
-                ["h3"],
-                ["p"]
-              ]
-            ],
-            [ "div.col-12 col-md-6 pr-md-0 mr-md-0",
-              [
-                ["img.img-fluid#imgp"]
-              ]
-            ]
+            [ "div.col-12 col-md-6  py-3 my-3#tacos",[
+              ['h1'], ['p'], ['div.col-12 row']
+            ]],
+            [ "div.col-12 col-md-6  py-3 my-3#quesadillas",[
+              ['h1'], ['p'], ['div.col-12 row']
+            ]],
+            [ "div.col-12 col-md-6  py-3 my-3#burguers", [
+              ['h1'], ['p'], ['div.col-12 row']
+            ]]
           ]
         ]
       ]
     ]
   ];
 
-  let bigText = "A <b>taco</b> (US: /ˈtɑːkoʊ/, UK: /ˈtækoʊ/, Spanish: [ˈtako]) is a traditional Mexican dish " +
-  "consisting of a small hand-sized corn or wheat tortilla topped with a filling. The tortilla is" +
-  " then folded around the filling and eaten by hand. A taco can be made with a variety of fillings,"+
-  " including beef, pork, chicken, seafood, vegetables, and cheese, allowing great versatility and "+
-  " variety. They are often garnished with various condiments, such as salsa, guacamole, or sour "+
-  " cream, and vegetables, such as lettuce, onion, tomatoes, and chiles. Tacos are a common form "+
-  " of antojitos, or Mexican street food, which have spread around the world.";
+  function makeList(items){
+    let ul = el('ul');
+    ul.classList.add('list-group');
+    for (let i = 0; i < items.length; i++) {
+      let badge = el('span')
+      badge.classList.add('badge');
+      badge.innerHTML = '$' + (Math.random() * (4-1)).toFixed(1);
+      let li = el('li');
+      li.classList.add('list-group-item', 'd-flex', 'justify-content-between', 'align-items-center');
+      li.innerHTML = items[i];
+      li.appendChild(badge);
+      ul.appendChild(li);
+    }
+    return ul;
+  }
 
+  populate(items, cont);
+  let tacos = ['carnitas', 'chicken', 'barbacoa', 'chicharron', 'chorizo', 'avocado'];
+  let quesadillas = ['mushroom', 'tomatoe', 'avocado', 'chicharron'];
+  let burguers = ['doble', 'cheeseburguer', 'triple', 'bacon', 'western'];
 
-  document.querySelector('#texts h2').innerHTML = "This is the best restaurant ever!";
-  document.querySelector('#texts h3').innerHTML = "we serve the best tacos!";
-  document.querySelector('#texts p').innerHTML = bigText;
-  document.querySelector('#imgp').src = "tacos.png";
+  document.querySelector('#tacos h1').innerHTML = 'Tacos';
+  document.querySelector('#tacos p').innerHTML = 'the speciallity of the house,open tortilla with some meat inside, '+
+  ' coriander and onion, and some sauces';
+  document.querySelector('#tacos div').appendChild(makeList(tacos));
+
+  document.querySelector('#quesadillas h1').innerHTML = 'Quesadillas';
+  document.querySelector('#quesadillas p').innerHTML = 'Same as tacos but with melted cheese, and the tortilla closed!!'
+  document.querySelector('#quesadillas div').appendChild(makeList(tacos));
+
+  document.querySelector('#burguers h1').innerHTML = 'Burguers';
+  document.querySelector('#burguers p').innerHTML = 'I mean, why not xD'
+  document.querySelector('#burguers div').appendChild(makeList(burguers));
+
 }
 
-export default home;
+export default menu;

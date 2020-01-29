@@ -11,6 +11,9 @@
 .menu button:hover {
   background-color: #ffffff50;
 }
+.list-group {
+  width: 100%;
+}
 @media (max-width:768px) {
   .menu button {
     padding: 5px;

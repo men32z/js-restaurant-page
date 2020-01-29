@@ -1,4 +1,4 @@
-import {populate} from './helper';
+import {populate, el} from './helper';
 function header(cont){
   let items = [
     [ "div.container-fluid bg-dark text-white py-3",
@@ -31,7 +31,9 @@ function header(cont){
   document.querySelector('#home').innerHTML = "Home";
   document.querySelector('#menu').innerHTML = "Menu";
   document.querySelector('#contact').innerHTML = "Contact";
-
+  let contentDiv = el('div');
+  contentDiv.id = "tabContent"
+  cont.appendChild(contentDiv);
 }
 
 export default header;
