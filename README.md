@@ -8,7 +8,7 @@ You can find the original project specification [here](https://www.theodinprojec
 
 ## Live Version
 
-[here](https://raw.githack.com/men32z/js-restaurant-page/the-page/dist/index.html)
+[here](https://raw.githack.com/men32z/js-restaurant-page/master/dist/index.html)
 
 ## Built With:
 
