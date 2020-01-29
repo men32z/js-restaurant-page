@@ -15,5 +15,16 @@
     "eol-last": "off",
     "arrow-parens": "off",
     "no-return-assign": "off"
+  },
+   "settings": {
+    "import/resolver": {
+      "webpack": {
+        "config": {
+          "resolve": {
+            "modules": ["node_modules"]
+          }
+        }
+      }
+    }
   }
 }
